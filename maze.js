@@ -52,9 +52,12 @@ var maze = function(width, height){
         var rndn = Math.floor(Math.random()*neighbors.length);
         var next = neighbors[rndn];
 
-        // already visited
-        if(alter[pos[0]][pos[1]] == v){
+        // already visited, reset position
+        if(alter[pos[0]][pos[1]] >= v){
             v = 0;
+            rndn = Math.floor(Math.random()*neighbors.length);
+            next = neighbors[rndn];
+            current--;
         }
 
         field[pos[0]][pos[1]] = v;
@@ -80,10 +83,10 @@ var maze = function(width, height){
         }
     };
 
-    while (current < minimum) {
+    // minimum
+    while (current < width*height) {
         genmaze(start);
     }
-    
     
     return field;
 }

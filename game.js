@@ -8,20 +8,6 @@ var Point = Isomer.Point;
 var Color = Isomer.Color;
 var Path = Isomer.Path;
 
-var color1 = new Color(84, 162, 144);
-var color2 = new Color(97, 136, 137);
-var color3 = new Color(172, 120, 119);
-var color4 = new Color(230, 89, 102);
-var color5 = new Color(243, 132, 89);
-
-function randomColor() {
-    return new Color(
-        parseInt(Math.random() * 256),
-        parseInt(Math.random() * 256),
-        parseInt(Math.random() * 256)
-    );
-}
-
 /**
  * Draws an octohedron contained in a 1x1 cube location at origin
  */
@@ -55,8 +41,6 @@ function Octohedron(origin) {
 
 
 var playerX, playerY;
-
-
 
 // Rotation angle for our centerpiece
 var angle = 0;
